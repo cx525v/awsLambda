@@ -1,0 +1,30 @@
+service: aws-lamda-tut
+provider:
+  name: aws
+  runtime: nodejs10.x
+  memorySize: 512
+  timeout: 15
+  stage: production
+  region: us-east-1
+  
+function:
+  api: 
+    handler: lambda.handler
+    events:
+      - http: ANY {proxy+}
+      - http: ANY /
+
+
+
+
+/*
+  package.json
+  
+  "scripts": {
+     "start":"node app.js",
+     "deploy":"srverless deploy"
+     
+  }
+  
+  npm run deploy
+*/
