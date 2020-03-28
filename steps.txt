@@ -1,0 +1,4 @@
+npm install -g serverless
+serverless create -t aws-nodejs
+serverless config credential --provider aws --key xxxx --secret xxxx
+serverless deploy
